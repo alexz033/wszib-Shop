@@ -1,0 +1,30 @@
+﻿
+@model AddProductViewModel
+<div class="row">
+    <div class="col-lg-3">
+       
+       <form asp-action="Add" method="post">
+           <div class="form-group">
+               <label asp-for="Name">Name: </label>
+               <input type="text" asp-for="Name" class="form-control"/>
+               <span asp-validation-for="Name" class="text-danger"></span>
+
+           </div>
+
+           <div class="form-control">
+               <label asp-for="Price">Price: </label>
+               <input type="number" min="1" max="100000" asp-for="Price" class="form-control"/>
+               <span asp-validation-for="Price" class="text-danger"></span>
+           </div>
+
+           <div class="form-control">
+               <label asp-for="Category">Category: </label>
+               <input asp-for="Category" asp-items="Model.Categories" class="form-control" />
+               <span asp-validation-for="Category" class="text-danger"></span>
+           </div>
+           <button type="submit" class="btn btn-primary ">Add product</button>
+       </form>
+    </div>
+</div>
+
+

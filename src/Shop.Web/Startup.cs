@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Shop.Web.Framework;
 
 namespace Shop.Web
 {
@@ -38,6 +39,8 @@ namespace Shop.Web
             }
 
             app.UseStaticFiles();
+             
+            app.UseMiddleware<MyMiddleware>();
 
             app.UseMvc(routes =>
             {
